@@ -156,7 +156,7 @@ void TwitterInit(const char *consumerKey, const char *consumerSecret)
  */
 void TwitterLogIn()
 {
-    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIViewController *rootViewController =UnityGetGLViewController();
     [[Twitter sharedInstance] logInWithViewController:rootViewController completion:^(TWTRSession *session, NSError *error) {
         if (session) {
             NSDictionary *sessionDictionary = NSDictionaryFromTWTRSession(session);

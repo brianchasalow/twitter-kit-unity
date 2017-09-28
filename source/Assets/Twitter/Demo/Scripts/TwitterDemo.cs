@@ -30,7 +30,7 @@ public class TwitterDemo : MonoBehaviour
 	}
 	
 	public void LoginCompleteWithCompose(TwitterSession session) {
-		Application.CaptureScreenshot("Screenshot.png");
+		ScreenCapture.CaptureScreenshot("Screenshot.png");
 		UnityEngine.Debug.Log ("Screenshot location=" + Application.persistentDataPath + "/Screenshot.png");
 		string imageUri = "file://" + Application.persistentDataPath + "/Screenshot.png";
 		Twitter.Compose (session, imageUri, "Welcome to", new string[]{"#TwitterKitUnity"},
@@ -38,5 +38,21 @@ public class TwitterDemo : MonoBehaviour
 			(ApiError error) => { UnityEngine.Debug.Log ("Tweet Failed " + error.message); },
 			() => { Debug.Log ("Compose cancelled"); }
 		 );
+	}
+
+	public void SetOrientationAuto(){
+		Screen.orientation = ScreenOrientation.AutoRotation;
+		Screen.autorotateToLandscapeLeft = true;
+		Screen.autorotateToLandscapeRight = true;
+		Screen.autorotateToPortrait = true;
+		Screen.autorotateToPortraitUpsideDown = true;
+	}
+
+	public void SetOrientationPortrait(){
+		Screen.orientation = ScreenOrientation.Portrait;
+	}
+
+	public void SetOrientationLandscape(){
+		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 }

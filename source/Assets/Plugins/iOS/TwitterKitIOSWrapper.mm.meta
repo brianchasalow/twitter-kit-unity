@@ -53,7 +53,9 @@ PluginImporter:
       second:
         enabled: 0
         settings:
+          CPU: AnyCPU
           DefaultValueInitialized: true
+          OS: AnyOS
     data:
       first:
         Facebook: Win
@@ -117,7 +119,7 @@ PluginImporter:
         enabled: 1
         settings:
           CompileFlags: 
-          FrameworkDependencies: SafariServices;
+          FrameworkDependencies: Twitter;SafariServices;
   userData: 
   assetBundleName: 
   assetBundleVariant: 
